@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Todos
+POST    /todos              controllers.TodoController.create
+GET     /todos              controllers.TodoController.list
+GET     /todos/:id          controllers.TodoController.get(id: models.Todo.Id)
+DELETE  /todos/:id          controllers.TodoController.delete(id: models.Todo.Id)
+PUT     /todos/:id          controllers.TodoController.update(id: models.Todo.Id)
+POST    /todos/:id/check    controllers.TodoController.check(id: models.Todo.Id)
+POST    /todos/:id/uncheck  controllers.TodoController.uncheck(id: models.Todo.Id)
+
+# Comments
+POST    /todos/:todoId/comments  controllers.CommentController.create(todoId: models.Todo.Id)
+GET     /todos/:todoId/comments  controllers.CommentController.list(todoId: models.Todo.Id)
+GET     /comments/:id            controllers.CommentController.get(id: models.Comment.Id)
+DELETE  /comments/:id            controllers.CommentController.delete(id: models.Comment.Id)
